@@ -1,0 +1,29 @@
+ - gcc –E pgm01.c > pgm01.i
+
+>> import des fichiers sources importés
+
+ - gcc -S pgm01.i
+
+>> code assembleur
+
+ - gcc -c pgm01.s
+
+>> génération du fichier qui va etre executer par la machine
+
+ - gcc pgm01.o -o pgm01
+
+>> fichier executable
+
+ - gcc pgm01.c -std=89 -o pgm01
+
+>> pas d'affichage
+
+ - gcc -Wall pgm01.c -std=89 -o pgm01
+
+>> pas d'affichage
+
+
+
+
+ - Factoriel de 13 est faux car sa valeur retourne un nombre plus grand que la nombre plus grand qui peut etre stocker dans un float ou un int
+
