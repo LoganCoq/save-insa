@@ -1,8 +1,12 @@
 #ifndef __MATRICE_IO_H__
 #define __MATRICE_IO_H__
 
-struct matrice read_matrice(FILE * p);
+#include "matrice.h"
 
-void write_matrice(FILE * p, struct matrice m);
+matrice read_matrice(FILE * p);
+
+void write_matrice(FILE * p, matrice m);
+
+void affiche_matrice(matrice m);
 
 #endif

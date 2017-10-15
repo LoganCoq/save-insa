@@ -1,5 +1,5 @@
-#ifndef __MATRICE_IO_H__
-#define __MATRICE_IO_H__
+#ifndef __MATRICE_H__
+#define __MATRICE_H__
 
 typedef struct matrice
 {
