@@ -1,0 +1,27 @@
+EXERCICE 1 :
+
+
+Dans la structure liste_vehicule, le pointeur v sert à pointer sur un véhicule.
+
+Dans la structure liste_vehicule, le pointeur next sert à pointer sur une nouvelle structure 
+liste_vehicule et donc vers un nouveau vehicule. Cela nous permet de créer une file.
+
+Dans le code de get_first_vehicule on retourne directement l->next->v, et pas l->v, car le premier
+element est un élément de gestion et contient alors des valeurs NULL. Le premier véhicule
+est donc dans l'élément suivant. En effet, quand on ajoute un vehicule on l'ajoute à next donc 
+le premier element de la liste n'est pas modifier et reste à NULL.
+
+
+EXERCICE 2:
+
+ - La liste vide
+
+[v: NULL; next: NULL; size: 0]
+
+ - La liste contenant un élément
+
+[v: NULL; next: [v: v1; next: NULL; size: 0]; size: 1]
+
+ - La liste contenant 2 éléments
+
+[v: NULL; next; [v: v1; next: [v: v2; next: NULL; size: 0]; size: 1]; size: 2]
