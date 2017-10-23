@@ -1,0 +1,7 @@
+lirairie dynamique :
+	stdlib
+		
+	call printf in stdlib
+
+librairie statique : 
+	code + libc printf (par ex)

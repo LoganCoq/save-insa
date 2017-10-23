@@ -14,10 +14,11 @@ void test_liste();
 void test_avance_liste();
 
 // Test des fonctions basiques de la liste
-int main(int argc, char ** argv)
+int main()
 {
-  test_liste();
-  test_avance_liste();
+	test_liste();
+	test_avance_liste();
+	return 0;
 }
 
 // Test des fonctions basiques de la liste
@@ -32,7 +33,7 @@ void test_liste(){
 
   // Declaration
 	vehicule *v1, *v2, *v3, *v4;
-  vehicule * old;
+	vehicule * old;
 	liste_vehicule *l;
 	
 	// Construction des vehicules
@@ -59,7 +60,7 @@ void test_liste(){
 	printVehicule(get_last_vehicule(l));
 	printf("\n");
 	printf("On enleve le premier vehicule.\n");
-  old = remove_first_vehicule(l);
+	old = remove_first_vehicule(l);
 	printf("Affichage du premier vehicule de la liste : \n");
 	printVehicule(get_first_vehicule(l));
 	printf("\n");
@@ -70,6 +71,19 @@ void test_liste(){
 	printVehicule(enlever_vehicule("Volkswagen Polo", l));
 	printf("Taille de la liste : %i\n", size(l));
 
+	printf("\nInversion de la liste :\n");
+	printVehicule(get_first_vehicule(l));
+	printVehicule(get_last_vehicule(l));
+	printf("\nAprès inversion :\n");
+	liste_vehicule *l1;	
+	l1 = renverser_liste(l);
+	printf("Taille de la liste : %i\n", size(l1));
+	printVehicule(get_first_vehicule(l1));
+	printVehicule(get_last_vehicule(l1));
+	
+	
+
 	destroy_list_and_vehicules(l);
+	destroy_list_and_vehicules(l1);
 }
 

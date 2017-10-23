@@ -50,6 +50,6 @@ vehicule* cherche_vehicule(char nom[20], liste_vehicule * L);
 vehicule* enlever_vehicule(char nom[20], liste_vehicule * L);
 
 // Renverse une liste
-vehicule* renverser_liste(liste_vehicule *L);
+liste_vehicule* renverser_liste(liste_vehicule *L);
 
 #endif

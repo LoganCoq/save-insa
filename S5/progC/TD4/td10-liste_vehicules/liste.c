@@ -166,12 +166,14 @@ liste_vehicule* renverser_liste(liste_vehicule *L)
 {
 	int i;
 	liste_vehicule *nlv;
+	liste_vehicule *lInter;
+	lInter = L;
 	nlv = init_liste();
 	for ( i = 0; i < L->size; i++ )
-	{
-		
-		add_vehicule_head(get_last_vehicule(L),nlv);
-		enlever_vehicule(get_last_vehicule(L));
+	{	
+	
+		add_vehicule(get_first_vehicule(lInter),nlv);
+		remove_first_vehicule(lInter);
 	}
 	return nlv;
 }

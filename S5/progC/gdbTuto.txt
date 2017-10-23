@@ -1,0 +1,13 @@
+gdb :
+
+breakpoint : point d'arret
+list : afficher les sources
+run : lancer le programme
+next : execute la prochaine instruction sans rentrer dans la fonction
+step : execute la prochaine instruction et rentre dans la fonction
+print : afficher des informations
+x : affiche l'info à l'adresse
+del : supprime un breakpoint
+continue : continue jusqu'au prochain breakpoint
+backtrace : affiche la trace du programme
+
