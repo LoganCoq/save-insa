@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "$$"
+while :
+do sleep 2
+echo "background" $$
+done
