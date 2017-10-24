@@ -4,7 +4,7 @@
 extern char ** environ;
 
 void getValEnv( const char *var );
-void putKayVal(const char *key, const char *val);
+void putKeyVal(const char *key, const char *val);
 
 int main(int argc, char ** argv)
 {
