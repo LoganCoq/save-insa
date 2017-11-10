@@ -1,0 +1,40 @@
+Partie 1 :
+
+
+1. Le serveur boucle en essayant succesivement de read et de accept 
+   selon le nombre de descripteur en attente, et va donc faire ces 
+   test successivement sur chacun des descripteur.
+
+Partie 2 :
+
+1. On peut voir que la fonction tryAccept execute le accept sur un numéro de 
+   descripteur en attente (stocké dans une variable globale), pour cela, il
+   trouve ce descripteur dans un tableau de descriteur grâce à l'indice 
+   du descripteur en attente. On test ensuite d'accepter le descripteur 
+   sur notre extremité et on regarrde si cela à fonctionné ou pas.
+
+2. grep 'select\|fnctl' *
+   On peut voir suite à cette commande que aucune ligne ne comprend la
+   chaine select ou fnctl ( a part en commentaire ) et donc, aucun de ces 
+   appels systemes ont étés faits.
+   Ici les appels read et accept devraient etre bloquants car la fonction read
+   bloque l'accès au descriteur afin qu'il ne soit pas modifier en même temps,
+   et on n'utilise pas l'appel systeme fnctl afin de ne pas les rendre 
+   bloquantes.
+   On peut utiliser des signaux pour éviter le caractère bloquant de ces fonctions
+   en testant les valeurs de SIG et donc éviter les blocks. 
+   (SIG_UNBLOCk débloque le signal dans sigprocmask)
+
+3. On peut voir qu'il n'y a en effet quasiment pas de valeurs en dur dans 
+   le code. Pour éviter cela, on crée des fonction d'initialisation et de
+   récupération de valeur afin de pouvoir facilement créer et modifier de 
+   nouvelle valeurs. On appelle cela des macros
+
+4. 
+   fGC_0 et fGC_1 : Font des tests sur askCx afin de savoir si il est en attente ou pas.
+   fGA_0 et fGA_1 : Permetent de faire un changement d'état global suite à des acccept et des reads.
+   
+
+Partie 3 :
+
+1. 

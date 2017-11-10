@@ -1,0 +1,2 @@
+touch chatWithAlarm.c
+make chatWithAlarm
