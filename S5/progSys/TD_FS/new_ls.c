@@ -32,6 +32,7 @@ int new_ls(struct stat *info, const char *ref){
 		type = 'l'; 
 		char buf[1024];
 		char *res;
+		// Possibilité d'utiliser readlink pour seulement avoir le nom du fichier pointer par le lien
 		if ( (res = realpath(ref, buf)))
 		{
 			strcat(curfile, " -> ");
