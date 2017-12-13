@@ -1,0 +1,70 @@
+1.
+Les valeurs maximale de seq et ack sont 7 car 2^3 - 1 = 8 - 1 = 7 
+
+2.
+Les valeurs de seq sont comprisent entre 0 et 7 car on a n=3 (soit 3 bits),
+on ne peut donc pas lui affecté une valeur plus grande que 7. On applique alors le
+modulo 8 ( niemetrame % 8)
+
+3.
+6 -> 6, 7 -> 7, 8 -> 0, 9 -> 1 ( soit numéro de trame % 8)
+
+4.
+(I) 
+	a = 6
+	b = 7
+	c = 0
+	c<a a<b
+(II)
+	a = 6
+	b = 0
+	c = 1
+	b<c c<a
+
+5.
+a <= b && b < c : milieu de la sequence  
+
+c < a && a <= b : fin de la sequence  
+
+b < c && c < a  : debut de la sequence 
+
+6.
+if (r.kind == data) 
+	traite de la fenetre de reception 
+
+if((r.kind==nak) && between(ack_expected,(r.ack+1)%(MAX_SEQ+1),next_frame_to_send)) et le while
+	traite de la fenetre d'émission
+
+7.
+fenetre emission : [ack_expected ; next_frame_to_send]
+fenetre reception : [frame_expected ; too_far]
+
+8. 
+
+
+9.
+taille fenetre <= (MaxSeq+1)/2
+
+10.
+On utilise cette borne maximale afin d'éviter la duplication de paquets
+
+11.
+if (fk == data) s.info = buffer[frame_nr % NB_BUFS];
+  s.seq = frame_nr;        /* only meaningful for data frames */
+  s.ack = (frame_expected + MAX_SEQ) % (MAX_SEQ + 1);
+                      
+
+12.
+case timeout
+
+13. 
+send_frame(data, get_timedout_seq_nr(), frame_expected, out_buf);
+
+14.
+On met 0 pour relancer le timer à 0 pour réattendre l'acquittement
+
+15.
+Le nombre de paquets non reçus
+
+16.
+
