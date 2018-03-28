@@ -1,0 +1,62 @@
+TD12 Logan Coquérant 
+
+Question d'introduction :
+
+On utilise UDP grâce à l'option "-u"
+
+Exercice flux de données :
+
+Q1 )MSS = 65495 bytes pour les deux cotés ( champ lisible dans les options des 2 premiers 
+paquets envoyer dans le champ options )
+
+Q2 ) On envoie 8 paquets qui font 1024 bytes chaqun. On à donc 8*1024 = 8192
+	Oui on pouvait attendre ce resultat car dans la commande du client on
+	précise qu'on envoie 8 paquets et c'est paquets font de base 1024 bytes
+
+Q3 ) 
+	La valeur de win dans le segment 8 est à 0 pour indiquer que sa fenetre est pleine 
+et qu'il ne peut plus recevoir de paquets
+	La veleur de win dans le segment 9 est à 4096 car il à libéré sa fenetre, il indique donc
+qu'il peut de nouveau recevoir des paquets
+
+
+Exercice congestion de données
+
+Q1 )	sock -i -s 7777
+
+Q2 ) 	sock -i -n32 127.0.0.1 7777
+
+Q3 )
+a) 	Taille entete TCP/IP : 20 bytes chacun ( avec champ options vide )
+b) 	MSS = 256 bytes car il y a 40 bytes d'entete ( tcp/ip)
+c)	(32 * 1024) / 256 ( on divise la taille des paquets qu'on a envoyer et on divise par le MSS)
+
+Q4 ) 	Gauche : client
+
+Q5)	Ils sont sauvegradés dans un buffer ( coté serveur )
+
+Q6 ) 	Le paquet 58 et les suivants comportent le même numéro d'acquitement car c'est la numéro
+	du paquet dont on attend la réception
+
+Q7 )	Le serveur reçoit 3 ack dupliqués ( 4 en comptant l'acquittement initial ) avant de reemettre
+	le paquet perdu
+	La méthode TCP permettant ce phénomène est le "fast retransmit"
+
+Q8 ) 	RTT = 9.156176 - 7.149042 = 2s
+	C'est efficace
+	
+
+Q9 )	Le numéro d'acquittement du segment 72 est 8961 car c'est le prochain paquets qu'on attends.
+	En effet on viens de recevoir le paquet perdu et on à sauvegardé les autres paquets, on
+	peut donc demander la reception des suivants.
+	
+Exercice TCP Keepalive
+
+Q1 ) Le serveur attends 7200s soit 2h avant d'envoyer un paquets tcp
+
+Q2 ) Si le client ne reponds pas c'est qu'il n'est pas joignable
+	Le serveur peut réagir en fermant la connection
+
+Q3 )	On est pas obliger de relancer la connexion lors d'un problème du coter client type crash
+	Si trop de client restent connecté sans etre actif, cela utilise des ressources pour rien 
+	et peux donc saturer le serveur

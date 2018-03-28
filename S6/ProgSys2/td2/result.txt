@@ -1,0 +1,5 @@
+Fils 4551 (nice  5) Compteur = 2754785980
+Fils 4554 (nice 20) Compteur = 723060304
+Fils 4550 (nice  0) Compteur = 2824436588
+Fils 4553 (nice 15) Compteur = 1881589843
+Fils 4552 (nice 10) Compteur = 2718512043

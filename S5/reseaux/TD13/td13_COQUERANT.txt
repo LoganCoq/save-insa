@@ -1,0 +1,34 @@
+2.)
+
+VM1 : 
+
+	eth1 : 172.16.162.202
+VM2 :
+	eth2 : 172.16.162.203
+
+3.)
+Ils sont bien sur le même sous réseau car il commence tout deux par 172.16.162.X et donc possedent le meme masque
+
+4.)
+route del default
+route add default gw 172.16.162.203
+ping 172.16.162.203
+
+On peut voir l'affichage d'échange de paquets entre les deux machines
+
+5.)
+ping 8.8.8.8
+On voit que l'on recoit pas de paquets en retour car la vm2 n'est pas configurée pour renvoyer les paquets vers VM1
+
+6.)
+echo 1 > /proc/sys/net/ipv4/ip_forward
+On peut voir que l'on peut désormais accéder à 8.8.8.8
+
+7.)
+L'interface de l'hôte fait la capture avec l'adresse IP 172.16.162.1 afin de capturer tout les paquets du sous reseau.
+On choisit VMnet8 car cette interface est sous le même reseau que les deux machines virtuelles.
+
+
+
+
+

@@ -1,0 +1,27 @@
+ls -l
+touch foo
+ls -l
+echo "toto titi" > bar
+ls -l
+cat bar
+chmod 777 bar
+ls -l
+cp bar bar2
+echo "tata" >> bar2
+diff  bar bar2
+grep "tata" bar2
+ls -l
+tail bar2
+wc bar2
+mv bar bar3
+rm bar2
+mkdir dir
+ls -l
+cd dir
+ls -l
+cd ..
+rmdir dir
+id
+env
+export "TEMP=/tmp"
+env

@@ -1,0 +1,67 @@
+----
+implanter:  cp src dest
+----
+
+AS : ( slide 133 )
+
+	open -> read -> write -> close
+
+GLIBC : ( slide 168 )
+
+	fopen -> fread -> fwrite -> fclose
+
+mmap : ( slide 157 )
+
+
+
+--------------------------
+cd /tmp
+dd if=/dev/urandom of=test-10M bs=1M count=10
+dd if=/dev/urandom of=test-100M bs=1M count=100
+dd if=/dev/urandom of=test-500M bs=1M count=500
+
+time(/cpAS, test-10,  toto, sync)
+
+Resultat :
+
+AS :
+	10M :
+		1 : 8.9s
+		2048 : 0.111s
+		40000 : 0.102s
+	100M :
+		1 : 
+		2048 : 1.048s
+		40000 : 1.017s
+	500M :
+		1: 
+		2048 : 4.992s
+		40000 : 4.829s
+GLIBC :
+        10M :
+                1 :
+                2048 :
+                40000 :
+        100M :
+                1 :
+                2048 :
+                40000 :
+        500M :
+                1: 
+                2048 :
+                40000 :
+
+MMAP :
+        10M :
+                1 :
+                2048 :
+                40000 :
+        100M :
+                1 :
+                2048 :
+                40000 :
+        500M :
+                1: 
+                2048 :
+                40000 :
+

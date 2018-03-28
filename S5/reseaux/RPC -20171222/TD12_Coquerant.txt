@@ -1,0 +1,33 @@
+1ere partie :
+
+a) 
+	On voit bien que des processus utilise le port 111 et donc que portmap ets lancé
+b)
+	On à rdict et rdictdemon qui on été généré
+c)
+	On peut voir lorsqu'on lance le client qu'il n'arrive pas à contacter le serveur distant
+	et qu'il n'arrive pas à enregistrer le programme rpc auprès du portmapper
+d)
+	
+e)
+	50991
+f)
+	La fonction clnttcp_create crée un client RPC pour un programme prognum, une version versnum
+	et un socket et les taille d'envoie et de reception
+g)
+	./rdict localhost 50991
+
+h)
+
+
+2eme partie :
+
+a)
+	INITDICT, INSERTW, DELETEW, LOOKUPW
+b)
+
+c)
+	"Dans initdict
+	 Dictionnaire initialise"
+
+
