@@ -1,0 +1,34 @@
+
+gcc secretfunction_bufferOF.c -g -fno-stack-protector -z execstack -o vuln
+	-fno-stack-protector : on eneleve la protection sur les attaques de pile
+	-z : on rend la pile executable
+		
+
+gdb ./vulm
+
+
+>>>> GDB
+
+break main
+info break
+set disassembly-flavor (att ou intel)
+
+	step : on va dans la fonction
+	next : on execute la fonction sans aller dedans
+	nexti : prochaine instruction au niveau assembleur
+
+info reg 
+	
+
+p $ebp : affiche le contenu de ebp
+
+
+
+lors de la saisie des caractère, pour faire le buffer overflow, si on écrit plus de 32 caractères,
+on va écraser les données précédentes dans la pile. On peut donc ecrire un nouvelle adresse
+Pour modifier l'adresse de retour
+
+
+
+as fic.asm -o fic.o
+ld fic.o -o fic
